@@ -70,8 +70,8 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200 font-sans">
-      <div className={`relative w-full max-w-md bg-[#111114] text-white border ${accentBorder} p-6 sm:p-8 rounded-2xl shadow-2xl space-y-4`}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200 font-sans">
+      <div className={`relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-md bg-[#111114] text-white border-0 sm:border ${accentBorder} p-4 sm:p-6 lg:p-8 rounded-none sm:rounded-2xl shadow-2xl space-y-4 flex flex-col justify-center overflow-y-auto`}>
         <button
           onClick={onCancel}
           className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer"

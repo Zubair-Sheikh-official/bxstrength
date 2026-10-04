@@ -404,12 +404,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-start justify-center p-4 sm:p-6 md:p-10 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-start justify-center p-0 sm:p-4 md:p-6 overflow-y-auto"
       onClick={handleBackdropClick}
     >
       <div 
         ref={modalRef}
-        className="bg-[#121214] text-white w-full max-w-3xl rounded-xl shadow-2xl border border-zinc-800 overflow-hidden flex flex-col max-h-[90vh] my-4 sm:my-8 animate-in slide-in-from-top-6 duration-200"
+        className="bg-[#121214] text-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-3xl rounded-none sm:rounded-xl shadow-2xl border-0 sm:border border-zinc-800 overflow-hidden flex flex-col my-0 sm:my-8 animate-in slide-in-from-top-6 duration-200"
       >
         {/* Search Input Bar Header */}
         <div className="relative border-b border-zinc-800 flex items-center bg-[#18181b] px-5 py-4">

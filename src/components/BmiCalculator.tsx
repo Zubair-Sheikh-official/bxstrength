@@ -250,8 +250,8 @@ export const BmiCalculator: React.FC = () => {
 
       {/* Explanation Modal */}
       {showExplanationModal && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white max-w-lg w-full p-6 rounded-none shadow-2xl border border-gray-200 animate-in zoom-in-95">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-0 sm:p-4">
+          <div className="bg-white max-w-lg w-full h-full sm:h-auto sm:max-h-[90vh] p-4 sm:p-6 rounded-none sm:rounded-xl shadow-2xl border-0 sm:border border-gray-200 animate-in zoom-in-95 overflow-y-auto flex flex-col">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100">
               <h3 className="text-lg font-black uppercase text-gray-900 flex items-center gap-2">
                 <Calculator className="w-5 h-5 text-[#E52165]" /> Body Mass Index (BMI) Guide

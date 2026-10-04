@@ -134,13 +134,12 @@ export const FeaturedClasses: React.FC<FeaturedClassesProps> = ({
           ))}
         </div>
 
-        {/* View All Classes CTA */}
         <div className="text-center mt-12">
           <button
-            onClick={() => onNavigate('schedule')}
-            className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-[#E52165] hover:text-[#c41551] uppercase border-b-2 border-[#E52165] pb-1 transition-colors"
+            onClick={() => onNavigate('services')}
+            className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-[#E52165] hover:text-[#c41551] uppercase border-b-2 border-[#E52165] pb-1 transition-colors cursor-pointer"
           >
-            EXPLORE FULL CLASS SCHEDULE & TIMETABLE <ArrowRight className="w-4 h-4" />
+            EXPLORE ALL SERVICES & PROTOCOLS <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 

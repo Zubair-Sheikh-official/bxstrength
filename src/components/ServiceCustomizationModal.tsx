@@ -453,8 +453,8 @@ export const ServiceCustomizationModal: React.FC<ServiceCustomizationModalProps>
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#0a0a0c] text-white border border-zinc-800 shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[95vh] font-sans selection:bg-[#CCFF00] selection:text-black">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full h-full sm:h-auto sm:max-h-[95vh] sm:max-w-2xl bg-[#0a0a0c] text-white border-0 sm:border border-zinc-800 shadow-2xl rounded-none sm:rounded-2xl overflow-hidden flex flex-col font-sans selection:bg-[#CCFF00] selection:text-black">
         
         {/* Modal Top Branding & Close Header */}
         <div className="px-4 sm:px-6 py-3 bg.121214 bg-[#121214] border-b border-zinc-800 flex items-center justify-between shrink-0">

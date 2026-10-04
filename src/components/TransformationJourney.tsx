@@ -292,11 +292,11 @@ export const TransformationJourney: React.FC<TransformationJourneyProps> = ({
       {/* FULLSCREEN MEDIA MODAL LIGHTBOX */}
       {selectedMedia && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/95 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setSelectedMedia(null)}
         >
           <div
-            className="relative w-full max-w-4xl bg-[#121214] border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
+            className="relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-4xl bg-[#121214] border-0 sm:border border-zinc-800 rounded-none sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}

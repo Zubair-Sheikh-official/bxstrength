@@ -1,0 +1,9 @@
+export { BookingModal } from '../BookingModal';
+export { SelfAssessmentModal } from '../SelfAssessmentModal';
+export { ServiceCustomizationModal } from '../ServiceCustomizationModal';
+export { MembershipModal } from '../MembershipModal';
+export { SearchModal } from '../SearchModal';
+export { LoginModal } from '../auth/LoginModal';
+export { RegisterModal } from '../auth/RegisterModal';
+export { ForgotPasswordModal } from '../auth/ForgotPasswordModal';
+export { OtpVerificationModal } from '../auth/OtpVerificationModal';

@@ -33,8 +33,8 @@ export const MembershipModal: React.FC<MembershipModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white w-full max-w-4xl rounded-none shadow-2xl border border-gray-200 overflow-hidden my-8 animate-in zoom-in-95">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-0 sm:p-4 overflow-y-auto">
+      <div className="bg-white w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-4xl rounded-none sm:rounded-2xl shadow-2xl border-0 sm:border border-gray-200 overflow-hidden flex flex-col my-0 sm:my-8 animate-in zoom-in-95">
         
         {/* Modal Header */}
         <div className="bg-[#111111] text-white p-6 flex items-center justify-between border-b border-gray-800">

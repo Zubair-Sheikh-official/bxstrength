@@ -408,11 +408,11 @@ export const BeforeAfterShowcase: React.FC<BeforeAfterShowcaseProps> = ({
       {/* FULLSCREEN IMAGE ZOOM MODAL */}
       {zoomImage && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-md animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/95 backdrop-blur-md animate-in fade-in"
           onClick={() => setZoomImage(null)}
         >
           <div 
-            className="relative max-w-5xl max-h-[90vh] bg-[#121214] border border-zinc-800 p-3 rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-5xl bg-[#121214] border-0 sm:border border-zinc-800 p-3 rounded-none sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-center items-center"
             onClick={(e) => e.stopPropagation()}
           >
             <button

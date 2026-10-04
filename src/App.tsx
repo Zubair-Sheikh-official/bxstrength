@@ -15,7 +15,6 @@ import { BookingModal } from './components/BookingModal';
 import { MembershipModal } from './components/MembershipModal';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { Footer } from './components/Footer';
-import { ScheduleView } from './components/ScheduleView';
 import { AboutView } from './components/AboutView';
 import { BlogView } from './components/BlogView';
 import { ContactView } from './components/ContactView';
@@ -23,9 +22,13 @@ import { TermsView } from './components/TermsView';
 import { PrivacyView } from './components/PrivacyView';
 import { OnboardingTermsView } from './components/OnboardingTermsView';
 import { SearchModal } from './components/SearchModal';
-import { ClientDashboard } from './components/dashboard/ClientDashboard';
-import { AdminCRM } from './components/admin/AdminCRM';
-import { SupportDashboardView } from './components/support/SupportDashboardView';
+import {
+  AdminDashboard,
+  HeadCoachDashboard,
+  CoachDashboard,
+  CustomerSupportDashboard,
+  ClientDashboard
+} from './dashboards';
 import { LoginModal } from './components/auth/LoginModal';
 import { RegisterModal } from './components/auth/RegisterModal';
 import { ForgotPasswordModal } from './components/auth/ForgotPasswordModal';
@@ -169,7 +172,8 @@ function AppContent() {
     const userRoleClean = (user.role || '').toLowerCase();
     if (['customer_support', 'support'].includes(userRoleClean)) {
       return (
-        <SupportDashboardView
+        <CustomerSupportDashboard
+          user={user}
           onShowToast={showToast}
           onNavigateHome={() => setCurrentPage('home')}
           onLogout={() => {
@@ -180,45 +184,99 @@ function AppContent() {
         />
       );
     }
-    if (userRoleClean === 'admin' || userRoleClean === 'headcoach' || userRoleClean === 'coach') {
+      if (userRoleClean === 'admin') {
+        return (
+          <AdminDashboard
+            user={user}
+            onLogout={() => {
+              logout();
+              setCurrentPage('home');
+              showToast('Signed out of Admin session');
+            }}
+            onNavigateHome={() => setCurrentPage('home')}
+          />
+        );
+      }
+      if (['headcoach', 'head_coach'].includes(userRoleClean)) {
+        return (
+          <HeadCoachDashboard
+            user={user}
+            onLogout={() => {
+              logout();
+              setCurrentPage('home');
+              showToast('Signed out of Head Coach session');
+            }}
+            onNavigateHome={() => setCurrentPage('home')}
+          />
+        );
+      }
+      if (userRoleClean === 'coach') {
+        return (
+          <CoachDashboard
+            user={user}
+            onLogout={() => {
+              logout();
+              setCurrentPage('home');
+              showToast('Signed out of Coach session');
+            }}
+            onNavigateHome={() => setCurrentPage('home')}
+          />
+        );
+      }
       return (
-        <AdminCRM
+        <ClientDashboard
           user={user}
           onLogout={() => {
             logout();
             setCurrentPage('home');
-            showToast('Signed out of CRM session');
+            showToast('Signed out of session');
+          }}
+          onNavigateHome={() => setCurrentPage('home')}
+          onOpenBooking={() => setBookingModalOpen(true)}
+        />
+      );
+    }
+
+    if (currentPage === 'admin' && user) {
+      const userRoleClean = (user.role || '').toLowerCase();
+      if (userRoleClean === 'headcoach' || userRoleClean === 'head_coach') {
+        return (
+          <HeadCoachDashboard
+            user={user}
+            onLogout={() => {
+              logout();
+              setCurrentPage('home');
+              showToast('Signed out of Head Coach session');
+            }}
+            onNavigateHome={() => setCurrentPage('home')}
+          />
+        );
+      }
+      if (userRoleClean === 'coach') {
+        return (
+          <CoachDashboard
+            user={user}
+            onLogout={() => {
+              logout();
+              setCurrentPage('home');
+              showToast('Signed out of Coach session');
+            }}
+            onNavigateHome={() => setCurrentPage('home')}
+          />
+        );
+      }
+      return (
+        <AdminDashboard
+          user={user}
+          onLogout={() => {
+            logout();
+            setCurrentPage('home');
+            showToast('Signed out of Admin session');
           }}
           onNavigateHome={() => setCurrentPage('home')}
         />
       );
     }
-    return (
-      <ClientDashboard
-        user={user}
-        onLogout={() => {
-          logout();
-          setCurrentPage('home');
-          showToast('Signed out of session');
-        }}
-        onNavigateHome={() => setCurrentPage('home')}
-      />
-    );
-  }
-
-  if (currentPage === 'admin' && user) {
-    return (
-      <AdminCRM
-        user={user}
-        onLogout={() => {
-          logout();
-          setCurrentPage('home');
-          showToast('Signed out of CRM session');
-        }}
-        onNavigateHome={() => setCurrentPage('home')}
-      />
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans flex flex-col selection:bg-white selection:text-black">
@@ -331,36 +389,10 @@ function AppContent() {
         )}
 
         {currentPage === 'schedule' && (
-          isAuthenticated ? (
-            <ScheduleView
-              onOpenBookingWithDetails={handleOpenBookingWithDetails}
-              onNavigateToAdmin={() => setCurrentPage('admin')}
-            />
-          ) : (
-            <div className="bg-[#0a0a0a] min-h-[70vh] flex flex-col items-center justify-center text-center p-6 space-y-4 font-sans">
-              <div className="w-16 h-16 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#CCFF00]">
-                <Lock className="w-8 h-8" />
-              </div>
-              <h2 className="text-2xl font-black text-white uppercase tracking-tight">MEMBERS ONLY TIMETABLE</h2>
-              <p className="text-xs text-zinc-400 max-w-md mx-auto leading-relaxed">
-                Class timetables and live schedule bookings are exclusively available for registered members. Please sign in or create a free account to view.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                <button
-                  onClick={() => setLoginModalOpen(true)}
-                  className="w-full sm:w-auto bg-white hover:bg-zinc-200 text-black font-black text-xs uppercase px-6 py-3 rounded-xl cursor-pointer shadow-lg"
-                >
-                  SIGN IN TO VIEW TIMETABLE
-                </button>
-                <button
-                  onClick={() => setRegisterModalOpen(true)}
-                  className="w-full sm:w-auto bg-[#CCFF00] hover:bg-[#b8e600] text-black font-black text-xs uppercase px-6 py-3 rounded-xl cursor-pointer shadow-lg shadow-[#CCFF00]/20"
-                >
-                  CREATE FREE ACCOUNT
-                </button>
-              </div>
-            </div>
-          )
+          <ServicesSection
+            onOpenBooking={() => setBookingModalOpen(true)}
+            onSelectService={(service) => setSelectedServiceForCustomization(service)}
+          />
         )}
 
         {currentPage === 'trainers' && (
@@ -390,7 +422,8 @@ function AppContent() {
 
         {currentPage === 'support_dashboard' && (
           isAuthenticated && user && ['customer_support', 'support', 'admin', 'headcoach', 'coach'].includes((user.role || '').toLowerCase()) ? (
-            <SupportDashboardView
+            <CustomerSupportDashboard
+              user={user}
               onShowToast={showToast}
               onNavigateHome={() => setCurrentPage('home')}
               onLogout={() => {

@@ -219,8 +219,8 @@ export const BlogView: React.FC<BlogViewProps> = ({ initialSelectedPostId, onCle
 
       {/* ARTICLE READ MODAL */}
       {selectedPost && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-[#121214] border border-zinc-800 w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden my-8 animate-in zoom-in-95">
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-0 sm:p-4 overflow-y-auto">
+          <div className="bg-[#121214] border-0 sm:border border-zinc-800 w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-2xl rounded-none sm:rounded-xl shadow-2xl overflow-y-auto flex flex-col my-0 sm:my-8 animate-in zoom-in-95">
             <div className="relative h-64 bg-zinc-900">
               <img
                 src={selectedPost.image}
@@ -274,8 +274,8 @@ export const BlogView: React.FC<BlogViewProps> = ({ initialSelectedPostId, onCle
 
       {/* WRITE & PUBLISH SHORT BLOG MODAL */}
       {showPublishModal && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#121214] border border-zinc-800 rounded-xl p-6 sm:p-8 max-w-xl w-full space-y-6 animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-0 sm:p-4">
+          <div className="bg-[#121214] border-0 sm:border border-zinc-800 rounded-none sm:rounded-xl p-4 sm:p-6 lg:p-8 max-w-xl w-full h-full sm:h-auto sm:max-h-[90vh] overflow-y-auto space-y-6 flex flex-col animate-in zoom-in-95 duration-200">
             <div className="flex items-center justify-between border-b border-zinc-800 pb-4">
               <div>
                 <h3 className="text-lg font-black uppercase text-white flex items-center gap-2">

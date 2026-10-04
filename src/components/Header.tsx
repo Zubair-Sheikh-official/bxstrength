@@ -60,24 +60,14 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navItems: { label: string; page: ViewPage }[] = isAuthenticated
-    ? [
-        { label: 'HOME', page: 'home' },
-        { label: 'ABOUT', page: 'about' },
-        { label: 'SERVICES', page: 'home' },
-        { label: 'COACHES', page: 'trainers' },
-        { label: 'TIMETABLE', page: 'schedule' },
-        { label: 'BLOG', page: 'blog' },
-        { label: 'CONTACT', page: 'contact' },
-      ]
-    : [
-        { label: 'HOME', page: 'home' },
-        { label: 'ABOUT', page: 'about' },
-        { label: 'SERVICES', page: 'home' },
-        { label: 'COACHES', page: 'trainers' },
-        { label: 'BLOG', page: 'blog' },
-        { label: 'CONTACT', page: 'contact' },
-      ];
+  const navItems: { label: string; page: ViewPage }[] = [
+    { label: 'HOME', page: 'home' },
+    { label: 'ABOUT', page: 'about' },
+    { label: 'SERVICES', page: 'home' },
+    { label: 'COACHES', page: 'trainers' },
+    { label: 'BLOG', page: 'blog' },
+    { label: 'CONTACT', page: 'contact' },
+  ];
 
   const handleNav = (page: ViewPage, targetElementId?: string) => {
     onNavigate(page);

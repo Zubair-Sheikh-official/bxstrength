@@ -380,43 +380,43 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
     //   badge: 'SAVE £5'
     // },
 
-    // --- WEEKLY & MONTHLY PROGRAMMES ---
-    // {
-    //   title: 'BX Weekly 3',
-    //   category: 'Programme',
-    //   servicePlan: 'BX Weekly 3',
-    //   duration: 'Varies by selected sessions',
-    //   price: 30,
-    //   sessionType: '3 Session Weekly Programme',
-    //   goalPrimaryOutcome: 'Choose any 3 sessions from Boxing, Strength, Functional, Mobility or Flexibility.',
-    //   whatYouGet: ['3 Sessions included per week', 'Flexible session selection', 'Build your week your way'],
-    //   keyDifference: '10% discount on weekly commitment.',
-    //   idealFor: 'Ideal for committed clients taking 3 sessions/week with 10% savings.',
-    //   totalSessions: '3 Sessions',
-    //   discount: 'SAVE 10%',
-    //   validity: '15 Days',
-    //   complimentary: 'Warm-up + cool-down included in every session.',
-    //   icon: Calendar,
-    //   badge: 'SAVE 10%'
-    // },
-    // {
-    //   title: 'BX Monthly 12',
-    //   category: 'Programme',
-    //   servicePlan: 'BX Monthly 12',
-    //   duration: 'Varies by selected sessions',
-    //   price: 50,
-    //   sessionType: '12 Session Monthly Programme',
-    //   goalPrimaryOutcome: 'Build a complete plan from Boxing, Strength, Functional, Mobility and Flexibility.',
-    //   whatYouGet: ['12 Sessions included per month', 'Complete transformation plan', 'Build your plan transform faster'],
-    //   keyDifference: '20% discount on monthly commitment.',
-    //   idealFor: 'Ideal for maximum transformation commitment with 20% savings.',
-    //   totalSessions: '12 Sessions / Month',
-    //   discount: 'SAVE 20%',
-    //   validity: '45 Days',
-    //   complimentary: 'Warm-up + cool-down included in every session.',
-    //   icon: RefreshCw,
-    //   badge: 'SAVE 20%'
-    // }
+   // --- WEEKLY & MONTHLY PROGRAMMES ---
+    {
+      title: 'BX Weekly 3',
+      category: 'Programme',
+      servicePlan: 'BX Weekly 3',
+      duration: 'Varies by selected sessions',
+      price: 30,
+      sessionType: '3 Session Weekly Programme',
+      goalPrimaryOutcome: 'Choose any 3 sessions from Boxing, Strength, Functional, Mobility or Flexibility.',
+      whatYouGet: ['3 Sessions included per week', 'Flexible session selection', 'Build your week your way'],
+      keyDifference: '10% discount on weekly commitment.',
+      idealFor: 'Ideal for committed clients taking 3 sessions/week with 10% savings.',
+      totalSessions: '3 Sessions',
+      discount: 'SAVE 10%',
+      validity: '15 Days',
+      complimentary: 'Warm-up + cool-down included in every session.',
+      icon: Calendar,
+      badge: 'SAVE 10%'
+    },
+    {
+      title: 'BX Monthly 12',
+      category: 'Programme',
+      servicePlan: 'BX Monthly 12',
+      duration: 'Varies by selected sessions',
+      price: 50,
+      sessionType: '12 Session Monthly Programme',
+      goalPrimaryOutcome: 'Build a complete plan from Boxing, Strength, Functional, Mobility and Flexibility.',
+      whatYouGet: ['12 Sessions included per month', 'Complete transformation plan', 'Build your plan transform faster'],
+      keyDifference: '20% discount on monthly commitment.',
+      idealFor: 'Ideal for maximum transformation commitment with 20% savings.',
+      totalSessions: '12 Sessions / Month',
+      discount: 'SAVE 20%',
+      validity: '45 Days',
+      complimentary: 'Warm-up + cool-down included in every session.',
+      icon: RefreshCw,
+      badge: 'SAVE 20%'
+    }
   ];
 
   const getNumericPrice = (p: number | string): number => {

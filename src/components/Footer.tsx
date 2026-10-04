@@ -91,11 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <ArrowRight className="w-3 h-3 text-zinc-500" /> Coaching Roster
                 </button>
               </li> */}
-              <li>
-                <button onClick={() => handleNav('schedule')} className="hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer">
-                  <ArrowRight className="w-3 h-3 text-zinc-500" /> Class Timetable
-                </button>
-              </li>
+
               <li>
                 <button onClick={() => handleNav('blog')} className="hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer">
                   <ArrowRight className="w-3 h-3 text-zinc-500" /> Articles &amp; Insights

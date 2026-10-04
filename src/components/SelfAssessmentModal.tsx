@@ -150,8 +150,8 @@ export const SelfAssessmentModal: React.FC<SelfAssessmentModalProps> = ({
   const progressPercent = Math.round((step / totalSteps) * 100);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#121214] text-white border border-zinc-800 shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full h-full sm:h-auto sm:max-h-[92vh] sm:max-w-2xl bg-[#121214] text-white border-0 sm:border border-zinc-800 shadow-2xl rounded-none sm:rounded-2xl overflow-hidden flex flex-col">
         
         {/* Modal Sticky Top Header */}
         <div className="px-5 py-4 bg-[#18181b] border-b border-zinc-800/80 flex items-center justify-between flex-shrink-0">
